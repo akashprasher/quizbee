@@ -5,7 +5,7 @@ import "./assets/style.css";
 import ReactDOM from "react-dom";
 import quizeService from "./quizService";
 import QuestionBox from "./components/questionBox";
-import Result from "./components/result";
+import Result from "./components/Result";
 
 class QuizeBee extends Component {
   state = {
@@ -47,7 +47,7 @@ class QuizeBee extends Component {
           {this.state.questionBank.length > 0 && this.state.responses < 5 && this.state.questionBank.map(({question, answers, correct, questionId}) => (
             <QuestionBox question={question} options={answers} key={questionId} selected={answer => this.computeAnswer(answer, correct)}/>
           ))}
-          {this.state.responses === 5 ? (<Result score={this.state.score} playAgain={this.playAgain} />) : null}
+          {this.state.responses === 5 ? (<Result score={this.state.score} playAgain={this.playAgain} />) : null};
       </div>
     );
   };
